@@ -11,6 +11,7 @@ func main() {
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
+	e.Use(middleware.CORS())
 
 	handler := handlers.NewSearchHandler()
 	e.GET("/", handler.Search)

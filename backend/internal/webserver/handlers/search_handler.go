@@ -22,7 +22,11 @@ func (h *SearchHandler) Search(c echo.Context) error {
 	}
 
 	paramEntity := data.ParseToSearchParameters()
-	_ = search.Search(paramEntity)
+	res, err := search.Search(paramEntity)
 
-	return c.NoContent(http.StatusOK)
+	if err != nil {
+		return err
+	}
+
+	return c.JSON(http.StatusOK, res)
 }

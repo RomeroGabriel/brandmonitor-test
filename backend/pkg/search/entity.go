@@ -5,4 +5,8 @@ type SearchParameters struct {
 }
 
 type SearchResult struct {
+	Index       int
+	URL         string
+	Title       string
+	Description string
 }
