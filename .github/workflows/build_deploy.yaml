@@ -18,8 +18,7 @@ jobs:
       - name: Setup Go  
         uses: actions/setup-go@v4
         with:
-          # go-version: '1.22.1'
-          go-version-file: 'go.mod'
+          go-version: '1.22.1'
       # Run vet and lint
       - name: Run vet & fmt
         run: |
