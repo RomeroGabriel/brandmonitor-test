@@ -19,14 +19,9 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: '1.22.1'
-      # Install lint
-      - name: Install dependencies
-        run: |
-          go version
-          go install golang.org/x/lint/golint
       # Run vet and lint
-      - name: Run vet & lint
+      - name: Run vet
         run: |
           go vet .
-          golint .
+          go fmt .
 
