@@ -22,6 +22,6 @@ jobs:
       # Run vet and lint
       - name: Run vet
         run: |
-          go vet .
-          go fmt .
+          go vet ./...
+          go fmt ./...
 
