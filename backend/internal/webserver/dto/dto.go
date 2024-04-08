@@ -1,6 +1,8 @@
 package dto
 
 import (
+	"strings"
+
 	"github.com/RomeroGabriel/brandmonitor-challange/backend/pkg/search"
 )
 
@@ -10,7 +12,6 @@ type SearchDTO struct {
 }
 
 func (s *SearchDTO) ParseToSearchParameters() search.SearchParameters {
-	return search.SearchParameters{SearchString: s.SearchString}
+	queryParsed := strings.Replace(s.SearchString, " ", "-", -1)
+	return search.SearchParameters{SearchString: queryParsed}
 }
-
-// http://localhost:8080/?search_string=Corinthians&language_search=pt
